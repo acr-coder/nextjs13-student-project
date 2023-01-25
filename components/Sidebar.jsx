@@ -12,18 +12,18 @@ export default function Sidebar({studentList}) {
   return (
     <div>        
         <Disclosure as="nav" >
-           <Disclosure.Button className="absolute top-4 right-4 inline-flex items-center peer justify-center rounded-md p-2 text-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white hover:bg-gray-900 group " >
+           <Disclosure.Button className="absolute top-4 right-4 inline-flex items-center peer md:hidden justify-center rounded-md p-2 text-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white hover:bg-gray-900 group " >
             <GiHamburgerMenu className='block  h-6 w-6'  aria-hidden="true" />            
         </Disclosure.Button> 
-        <div className='p-6 w-1/2 h-screen bg-white z-20 fixed top-0 -left-96 lg:w-72 lg:left-0 peer-focus:left-0 peer:transition ease-out delay-150 duration-1000 overflow-y-auto' >    
+        <div className='p-6 w-1/2 h-screen bg-slate-500 z-20 fixed top-0 -left-96 lg:w-72 lg:left-0 peer-focus:left-0 peer:transition ease-out delay-150 duration-1000 overflow-y-auto' >    
 
                 <div className="flex flex-col justify-start items-start ">
-                    <h1 className='text-blue-900 text-center cursor-pointer font-bold border-b border-gray-900 pb-4 w-full' >School System</h1>
+                    <h1 className='text-blue-900 text-center text-4xl cursor-pointer font-bold border-b border-gray-900 pb-4 w-full' >School System</h1>
                     <div className="my-4 border-b border-gray-100 pb-4  ">                        
                         <Link href="/students/new-student"  >
                           <div className="flex mb-2  justify-start items-center gap-4 pl-1 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg">
                             
-                            <h3 className="text-gray-800  group-hover:text-white font-semibold  ">New Student</h3>
+                            <h3 className="text-gray-800  group-hover:text-white font-bold  ">New Student</h3>
                          </div>
                         </Link>
                         
@@ -44,6 +44,7 @@ export default function Sidebar({studentList}) {
         leaveTo="transform scale-95 opacity-0"
       >
         <Disclosure.Panel className="flex flex-col" >
+        <Link  className=" p-2 ml-10 mb-2 w-full border border-orange-300 hover:bg-orange-500 rounded-md group cursor-pointer hover:shadow-lg  hover:text-white font-semibold  " href={`/students`} >View All ({studentList.length}) Students</Link>
 
         {_classes.map((classNo) => (
           <Disclosure as="div" key={classNo} >

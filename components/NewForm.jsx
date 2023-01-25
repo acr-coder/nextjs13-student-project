@@ -73,8 +73,8 @@ export default function NewForm() {
   return (
     
             
-                <form onSubmit={handleSubmit} className="w-full lg:w-1/2 mx-auto mt-11  px-6 py-8 rounded shadow-md text-black ">
-                    <h1 className="mb-8 text-3xl text-center">Register Student</h1>
+                <form onSubmit={handleSubmit} className="flex flex-wrap w-full lg:w-1/2 mx-auto mt-11 bg-slate-600  px-6 py-8 rounded shadow-md text-black ">
+                    <h1 className="mb-8 text-3xl text-center">Register Student</h1>                    
                     <h3 className='text-red-500 mb-2' >{error}</h3>
                     <input 
                     value={fullname}

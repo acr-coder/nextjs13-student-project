@@ -17,6 +17,7 @@ dbConnect()
 
 export default async (req, res) => {
     const { method } = req;
+    
 
     switch (method) {
         case 'GET':
@@ -30,17 +31,17 @@ export default async (req, res) => {
             break;
         case 'POST':
             try {
-                const student = await Student.create(req.body);
-
+                //const student = await Student.create(req.body);
+                const student = await Student.insertMany(req.body)
                 res.status(201).json({ success: true, data: student })
             } catch (error) {
                 res.status(400).json({ success: false, error });
-            }
+            }            
             break;
         case 'DELETE':
             try {
-                // const student = await Student.findByIdAndDelete(req.body.id);
-                const student = await Student.deleteMany({_id: { $in: req.body.objects}});
+                 const student = await Student.findByIdAndDelete(req.body.id);
+                //const student = await Student.deleteMany({_id: { $in: req.body.objects}});
                 res.status(201).json({ success: true, data: student })
             } catch (error) {
                 res.status(400).json({ success: false });

@@ -19,7 +19,7 @@ export default async function RootLayout({ children }) {
       
       <head />
       <body className='flex flex-row' >                     
-        <div className='basis-1/4 ' >
+        <div className='basis-1/4 bg-slate-500 ' >
           <Sidebar studentList = {studentData.data} />
         </div>
             <main  className='p-5 basis-3/4'>   

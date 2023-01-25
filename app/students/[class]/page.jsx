@@ -33,7 +33,7 @@ export default async function Class({ params }) {
             {
               studentList.map((student) => (
                 <div key={student._id}
-              className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4 cursor-pointer hover:scale-110 transition-transform"
+              className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4 cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300"
                         
             >
               <Link href={`/students/${params.class}/${student._id}`} >

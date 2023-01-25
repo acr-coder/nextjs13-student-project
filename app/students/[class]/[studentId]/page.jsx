@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import {RiEditBoxFill} from "react-icons/ri"
+import NewForm from "@/components/NewForm";
+import EditForm from "@/components/EditForm";
 
 async function getStudent(id) {
   const res = await fetch(`http://localhost:3000/api/students/${id}`);
@@ -26,7 +29,7 @@ export default async function StudentDetail({ params }) {
           className="container max-w-7xl mx-auto "
           style={{ cursor: "auto" }}
         >
-          <div className="flex  pt-5">
+          <div className="flex  pt-1">
             
                 <div key={student.data._id}
               className=" lg:mb-0 mb-12 "
@@ -40,7 +43,7 @@ export default async function StudentDetail({ params }) {
                   className="rounded-xl w-8/12 md:w-5/12 lg:w-4/12 shadow-lg max-w-full h-auto mb-3  align-middle border-none undefined"
                   
                 />
-                <div className="p-5 rounded-3xl  bg-slate-400 ml-5">
+                {/* <div className="p-5 rounded-3xl  bg-slate-400 ml-5">
                   <h1 className="text-gray-900 w-full text-xl font-bold   ">
                     Personel Information
                   </h1>
@@ -56,9 +59,20 @@ export default async function StudentDetail({ params }) {
                   <h2 className="text-gray-900 md:text-xl   leading-normal mt-0 mb-1 ">
                     Address: {student.data.address}
                   </h2>
+                  <div className="flex justify-between" >
+                    <button className="px-2 py-1 rounded-xl text-green-500 bg-white md:text-xl hover:bg-green-500 hover:text-white  leading-normal mt-0 mb-1 ">
+                    Edit
+                  </button>
+                  <button className="px-2 py-1 rounded-xl text-red-500 bg-white md:text-xl hover:bg-red-500 hover:text-white  leading-normal mt-0 mb-1 ">
+                    Delete
+                  </button>
+                  </div>
                   
                   
-                </div>
+                  
+                </div> */}
+                 <EditForm studentData = {student.data} />
+                
                 
               </div>
             </div>
